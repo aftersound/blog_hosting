@@ -1,4 +1,4 @@
-# Creat OpenResty docker image which supports https with let's encrypt certificate auto-renewed.
+# Create OpenResty docker image which supports https with let's encrypt certificate auto-renewed.
 
 Let's encrypt certificates are free and trusted by most browsers. However, the certificate issued by Let's encrypt
 expires every 90 days. resty-auto-ssl is a Lua module for OpenResty which automatically renews Let's encrypt
