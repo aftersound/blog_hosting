@@ -1,15 +1,19 @@
 # Create OpenResty docker image which supports https with Let's Encrypt certificate auto-renewed.
 
-nginx natively supports https, however it is quite a manual process to update SSL private key and certificate for 
-a nginx server. OpenResty adds dynamic configuration to nginx and some of its addon Lua modules can manage the 
-lifecycle of SSL key/certificate without manual intervention. 
+Most sites nowaday adopt https to address security and privacy concern and they needs SSL key/certificate 
+trusted by browsers. 
 
-Let's Encrypt certificates are free but trusted by most browsers. However, the certificate issued by Let's Encrypt
-expires every 90 days. resty-auto-ssl, a Lua module for OpenResty, automatically renews Let's Encrypt key/certificate 
-for OpenResty server before SSL key/certificate expires.
+While many certificate providers charge fee for issuing SSL key/certificate, Let's Encrypt offers free 
+key/certificates which are still trusted by most modern browsers. The only caveat is the key/certificate issued 
+by Let's Encrypt expires every 90 days. 
 
-This repository includes a dockerfile and also a OpenResty configuration which you can use to create an OpenResty 
-docker image which supports https with auto-renewed Let's Encrypt certificate. 
+As one of widely used web servers, nginx natively supports https, however it is quite a manual process to update 
+SSL private key and certificate for a nginx server. OpenResty adds dynamic configuration to nginx and some of its 
+addon Lua modules try to make it easier to manage SSL key/certificate. resty-auto-ssl is such a module, it offers 
+the functionality of generating and auto-renewing Let's Encrypt key/certificate for OpenResty server. 
+
+This repository includes a dockerfile and also a OpenResty configuration which you can use to create OpenResty 
+docker image which supports https with Let's Encrypt SSL key/certificate auto-renewed.
 
 ```
 # 1. clone this git repository
