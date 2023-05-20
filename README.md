@@ -8,7 +8,7 @@ certificate.
 # 1. cd project root directory
 
 # 2. build docker image, assuming site domain name is myblog.com
-docker build -t openresty --build-arg CN=myblog.com $(pwd)/openresty/docker
+docker build -t openresty --build-arg CN=yourblog.com $(pwd)/openresty/docker
 
 # 3. try to run docker image
 docker run -it -p 80:80 -p 443:443 -v $(pwd)/openresty/nginx/conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf -v $(pwd)/_site:/usr/share/_site openresty
